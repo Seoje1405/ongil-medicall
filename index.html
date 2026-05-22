@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="온길 — 부모님의 복약을 알림 전화와 스마트 약 관리로 함께 챙겨드리는 서비스" />
+  <meta property="og:title" content="온길 — 부모님 곁의 복약 동반자" />
+  <meta property="og:description" content="처방전 촬영으로 약 등록, 식사 후 자동 알림 전화, 약물 충돌 분석까지" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="/og-image.png" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <title>온길 — 부모님 곁의 복약 동반자</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Noto+Serif+KR:wght@400;500&family=Noto+Sans+KR:wght@400;500&display=swap"
+    rel="stylesheet"
+  />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ═══════════════════════════════════════════
+       TOP NAV
+  ═══════════════════════════════════════════ -->
+  <nav class="top-nav" aria-label="주 내비게이션">
+    <div class="container">
+
+      <a href="#" class="nav-wordmark" aria-label="온길 홈">
+        <svg class="spike-mark" viewBox="0 0 28 28" fill="none" aria-hidden="true">
+          <path d="M14 2 L15.4 12.6 L24 7 L16.8 14 L24 21 L15.4 15.4 L14 26 L12.6 15.4 L4 21 L11.2 14 L4 7 L12.6 12.6 Z" fill="#cc785c"/>
+        </svg>
+        온길
+      </a>
+
+      <ul class="nav-links" role="list">
+        <li><a href="#features">기능</a></li>
+        <li><a href="#how">이용 방법</a></li>
+        <li><a href="#testimonials">이용 후기</a></li>
+      </ul>
+
+      <div class="nav-right">
+        <button class="nav-signin">로그인</button>
+        <button class="btn-primary">무료로 시작하기</button>
+        <button class="nav-hamburger" aria-label="메뉴 열기" aria-expanded="false" aria-controls="mobile-nav">
+          <span class="hamburger-bar"></span>
+          <span class="hamburger-bar"></span>
+          <span class="hamburger-bar"></span>
+        </button>
+      </div>
+
+    </div>
+  </nav>
+
+  <div class="mobile-nav" id="mobile-nav" aria-hidden="true">
+    <ul class="mobile-nav-links" role="list">
+      <li><a href="#features">기능</a></li>
+      <li><a href="#how">이용 방법</a></li>
+      <li><a href="#testimonials">이용 후기</a></li>
+    </ul>
+    <div class="mobile-nav-actions">
+      <button class="btn-primary">무료로 시작하기</button>
+      <button class="btn-secondary">로그인</button>
+    </div>
+  </div>
+
+
+  <!-- ═══════════════════════════════════════════
+       HERO
+  ═══════════════════════════════════════════ -->
+  <section class="hero" aria-label="서비스 소개">
+    <div class="container">
+
+      <!-- Left: Copy -->
+      <div>
+        <h1 class="hero-h1 anim-fade-up delay-1">
+          부모님의 복약,<br/>
+          <em>매일 함께</em><br/>
+          지켜드립니다
+        </h1>
+
+        <p class="hero-sub anim-fade-up delay-2">
+          온길은 멀리 떨어진 부모님의 복약을 알림 전화와
+          스마트 약 관리로 세심하게 챙겨드리는 서비스입니다.
+        </p>
+
+        <div class="hero-actions anim-fade-up delay-3">
+          <button class="btn-primary">앱 다운로드</button>
+          <button class="btn-secondary">기능 살펴보기</button>
+        </div>
+
+        <div class="hero-trust anim-fade-up delay-4">
+          <span class="trust-dot" aria-hidden="true"></span>
+          <span>카카오 · 네이버 간편 로그인 지원</span>
+          <span class="trust-divider" aria-hidden="true">|</span>
+          <span>전화번호 인증으로 안전한 서비스</span>
+        </div>
+      </div>
+
+      <!-- Right: App Mockup -->
+      <div class="hero-visual anim-fade-up delay-2" aria-hidden="true">
+
+        <!-- Floating badge -->
+        <div class="hero-float-badge">
+          <span class="float-icon">📞</span>
+          <div>
+            <div class="float-text">복약 알림 발신</div>
+            <div class="float-sub">오후 12:30 · 점심 식사 후</div>
+          </div>
+        </div>
+
+        <!-- Phone shell -->
+        <div class="hero-phone-wrap">
+          <div class="phone-status-bar">
+            <span>9:41</span>
+            <span>●●●●</span>
+          </div>
+
+          <div class="phone-header">
+            <div>
+              <div class="phone-sub">안녕하세요 👋</div>
+              <div class="phone-greeting">아버지의<br/>오늘 복약</div>
+            </div>
+            <div class="phone-avatar">👴</div>
+          </div>
+
+          <!-- 복약 부족 알림 카드 -->
+          <div class="alert-card">
+            <span class="alert-icon">⚠️</span>
+            <div>
+              <div class="alert-label">복약 부족 알림</div>
+              <div class="alert-text">혈압강하제</div>
+              <div class="alert-sub">남은 복용 가능일 ·
+                <strong class="alert-day-count">2일</strong>
+              </div>
+            </div>
+          </div>
+
+          <!-- 아침 복약 (완료) -->
+          <div class="med-section-label">🌅 아침</div>
+          <div class="med-card med-card--done">
+            <div class="med-pill-dot med-pill-dot--done">💊</div>
+            <div>
+              <div class="med-name">혈압강하제</div>
+              <div class="med-info">아침 · 1정</div>
+            </div>
+            <span class="med-badge">완료</span>
+          </div>
+
+          <!-- 점심 복약 (대기중) -->
+          <div class="med-section-label">☀️ 점심</div>
+          <div class="med-card">
+            <div class="med-pill-dot med-pill-dot--pending">🔴</div>
+            <div>
+              <div class="med-name">소화제</div>
+              <div class="med-info">점심 · 1포</div>
+            </div>
+            <span class="med-badge med-badge--pending">대기중</span>
+          </div>
+          <div class="med-card">
+            <div class="med-pill-dot med-pill-dot--green">🟢</div>
+            <div>
+              <div class="med-name">종합비타민</div>
+              <div class="med-info">점심 · 1정</div>
+            </div>
+            <span class="med-badge med-badge--pending">대기중</span>
+          </div>
+        </div>
+        <!-- /phone-wrap -->
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════
+       SOCIAL PROOF BAND
+  ═══════════════════════════════════════════ -->
+  <div class="proof-band" aria-label="서비스 차별점">
+    <div class="container">
+      <ul class="proof-pillars" role="list">
+        <li class="proof-pillar">
+          <div class="proof-pillar-head">전화로 알려드립니다</div>
+          <p class="proof-pillar-body">식사 30분 후 자동 발신 · 부재 시 10분 후 재시도</p>
+        </li>
+        <li class="proof-pillar">
+          <div class="proof-pillar-head">사진 한 장으로 등록</div>
+          <p class="proof-pillar-body">처방전·약봉투·약곽을 OCR로 즉시 파싱해 자동 입력</p>
+        </li>
+        <li class="proof-pillar">
+          <div class="proof-pillar-head">위험 조합을 감지합니다</div>
+          <p class="proof-pillar-body">복용 중인 약물의 상호작용을 자동으로 분석해 알림</p>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+
+  <!-- ═══════════════════════════════════════════
+       FEATURES
+  ═══════════════════════════════════════════ -->
+  <section class="section features" id="features" aria-label="주요 기능">
+    <div class="container">
+
+      <div class="section-eyebrow">
+        <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true">
+          <path d="M8 1l1 6h6L9.5 10.5 11 16 8 12.5 5 16l1.5-5.5L1 7h6z" fill="#cc785c"/>
+        </svg>
+        <span class="section-eyebrow-label">주요 기능</span>
+      </div>
+
+      <h2 class="section-title">
+        부모님 건강을 위한<br/>
+        <em>스마트한 동반자</em>
+      </h2>
+      <p class="section-sub">
+        복약 등록부터 알림 전화, 약물 충돌 분석까지 — 온길 하나로 모두 해결하세요.
+      </p>
+
+      <div class="features-grid">
+
+        <!-- 카드 1: 전화 알림 -->
+        <article class="feature-card feature-card--dark">
+          <div class="feature-icon" aria-hidden="true">📞</div>
+          <h3 class="feature-title">식사 후 전화 알림</h3>
+          <p class="feature-desc">
+            식사 시간 30분 후 부모님께 자동으로 복약 알림 전화를 드립니다.
+            수신 못 하셨다면 10분 후 재발신합니다.
+          </p>
+          <div class="call-visual" aria-hidden="true">
+            <div class="call-icon-wrap">📞</div>
+            <div class="call-text">
+              <div class="call-name">아버지께 발신 중...</div>
+              <div class="call-sub">점심 복약 알림 · 오후 12:30</div>
+            </div>
+            <div class="call-retry-label">+10분 재시도</div>
+          </div>
+        </article>
+
+        <!-- 카드 2: 카메라 등록 -->
+        <article class="feature-card">
+          <div class="feature-icon" aria-hidden="true">📷</div>
+          <h3 class="feature-title">처방전 촬영으로 자동 등록</h3>
+          <p class="feature-desc">
+            처방전, 약봉투, 약곽을 카메라로 찍으면 OCR이 약 정보를
+            자동으로 분석하여 입력합니다.
+          </p>
+          <div class="ocr-visual" aria-hidden="true">
+            <div class="ocr-img-mock">
+              병원명: 서울내과<br/>
+              약품명: <span class="ocr-highlight">암로디핀 5mg</span><br/>
+              복용법: <span class="ocr-highlight">1일 1회 아침</span><br/>
+              처방일수: <span class="ocr-highlight">30일분</span>
+            </div>
+            <div class="ocr-arrow">↓</div>
+            <div class="ocr-result">
+              <div class="ocr-row">
+                <span class="ocr-label">약 이름</span>
+                <span class="ocr-val">암로디핀 5mg</span>
+              </div>
+              <div class="ocr-row">
+                <span class="ocr-label">복용 횟수</span>
+                <span class="ocr-val">1일 1회</span>
+              </div>
+              <div class="ocr-row">
+                <span class="ocr-label">복용 기간</span>
+                <span class="ocr-val">30일</span>
+              </div>
+              <div class="ocr-row">
+                <span class="ocr-label">복용 시간</span>
+                <span class="ocr-val ocr-val--accent">아침 자동 설정 ✓</span>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- 카드 3: 약물 충돌 -->
+        <article class="feature-card feature-card--dark">
+          <div class="feature-icon" aria-hidden="true">🔬</div>
+          <h3 class="feature-title">약물 충돌 성분 분석</h3>
+          <p class="feature-desc">
+            현재 복용 중인 약물들의 상호작용을 자동으로 분석하여
+            위험한 조합을 알려드립니다.
+          </p>
+          <div class="conflict-visual" aria-hidden="true">
+            <div class="conflict-item conflict-item--warn">
+              <span class="conflict-dot dot--warn"></span>
+              <span class="conflict-name">와파린 + 아스피린</span>
+              <span class="conflict-badge badge--warn">주의 필요</span>
+            </div>
+            <div class="conflict-item conflict-item--safe">
+              <span class="conflict-dot dot--safe"></span>
+              <span class="conflict-name">암로디핀 + 오메가3</span>
+              <span class="conflict-badge badge--safe">안전</span>
+            </div>
+            <div class="conflict-item conflict-item--safe">
+              <span class="conflict-dot dot--safe"></span>
+              <span class="conflict-name">메트포르민 + 비타민C</span>
+              <span class="conflict-badge badge--safe">안전</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- 카드 4: PDF -->
+        <article class="feature-card">
+          <div class="feature-icon" aria-hidden="true">📄</div>
+          <h3 class="feature-title">복약 리포트 PDF 출력</h3>
+          <p class="feature-desc">
+            현재 복약 기록과 약물 충돌 정보를 PDF로 저장해
+            병원 방문 시 바로 제출할 수 있습니다.
+          </p>
+          <div class="pdf-visual" aria-hidden="true">
+            <div class="pdf-header">
+              <span class="pdf-logo">온길</span>
+              <span class="pdf-date">2025.11.20</span>
+            </div>
+            <div class="pdf-section-title">복약 리포트</div>
+            <div class="pdf-table">
+              <div class="pdf-row pdf-row--head">
+                <span>약품명</span><span>복용법</span><span>기간</span>
+              </div>
+              <div class="pdf-row">
+                <span>암로디핀 5mg</span><span>1일 1회 아침</span><span>90일</span>
+              </div>
+              <div class="pdf-row">
+                <span>메트포르민</span><span>1일 2회</span><span>30일</span>
+              </div>
+              <div class="pdf-row">
+                <span>오메가3</span><span>1일 1회 점심</span><span>60일</span>
+              </div>
+            </div>
+            <div class="pdf-footer">
+              <span class="pdf-chip">PDF 저장</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- 카드 5: 약물 노트 -->
+        <article class="feature-card">
+          <div class="feature-icon" aria-hidden="true">📒</div>
+          <h3 class="feature-title">약물 노트 &amp; 상세 정보</h3>
+          <p class="feature-desc">
+            처방일 · 병원명 기준으로 정리된 약 리스트와 효능, 용법,
+            부작용 정보를 한눈에 확인하세요.
+          </p>
+          <div class="note-visual" aria-hidden="true">
+            <div class="note-rx-list">
+              <div class="note-rx note-rx--active">
+                <span class="note-rx-date">11.20</span>
+                <span class="note-rx-name">서울내과 · 3종</span>
+              </div>
+              <div class="note-rx">
+                <span class="note-rx-date">10.05</span>
+                <span class="note-rx-name">연세병원 · 2종</span>
+              </div>
+              <div class="note-rx">
+                <span class="note-rx-date">08.12</span>
+                <span class="note-rx-name">한강내과 · 1종</span>
+              </div>
+            </div>
+            <div class="note-detail">
+              <div class="note-detail-name">암로디핀 5mg</div>
+              <div class="note-detail-row">
+                <span class="note-detail-key">효능</span>
+                <span class="note-detail-val">혈압 조절</span>
+              </div>
+              <div class="note-detail-row">
+                <span class="note-detail-key">부작용</span>
+                <span class="note-detail-val note-detail-warn">두통, 부종 주의</span>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- 카드 6: 다중 부모님 -->
+        <article class="feature-card feature-card--dark">
+          <div class="feature-icon" aria-hidden="true">👨‍👩‍👦</div>
+          <h3 class="feature-title">여러 부모님 동시 관리</h3>
+          <p class="feature-desc">
+            아버지, 어머니 각각 개별 프로필로 등록하고
+            각자의 복약 스케줄을 독립적으로 관리합니다.
+          </p>
+          <div class="multi-visual" aria-hidden="true">
+            <div class="multi-profile">
+              <div class="multi-avatar">👴</div>
+              <div>
+                <div class="multi-name">아버지</div>
+                <div class="multi-status">
+                  <span class="multi-dot multi-dot--done"></span>
+                  오늘 복약 완료
+                </div>
+              </div>
+              <span class="multi-badge">3종</span>
+            </div>
+            <div class="multi-profile">
+              <div class="multi-avatar">👵</div>
+              <div>
+                <div class="multi-name">어머니</div>
+                <div class="multi-status">
+                  <span class="multi-dot multi-dot--pending"></span>
+                  점심 복약 대기
+                </div>
+              </div>
+              <span class="multi-badge multi-badge--pending">5종</span>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════
+       HOW IT WORKS
+  ═══════════════════════════════════════════ -->
+  <section class="section how" id="how" aria-label="이용 방법">
+    <div class="container">
+
+      <div class="section-eyebrow">
+        <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true">
+          <path d="M8 1l1 6h6L9.5 10.5 11 16 8 12.5 5 16l1.5-5.5L1 7h6z" fill="#cc785c"/>
+        </svg>
+        <span class="section-eyebrow-label section-eyebrow-label--on-dark">이용 방법</span>
+      </div>
+
+      <h2 class="section-title section-title--on-dark">
+        단 4단계로<br/><em>시작하세요</em>
+      </h2>
+      <p class="section-sub section-sub--on-dark section-sub--compact">
+        복잡한 설정 없이 5분이면 부모님 복약 관리를 시작할 수 있습니다.
+      </p>
+
+      <ol class="steps-grid" role="list">
+        <li class="step-card">
+          <div class="step-num" aria-hidden="true">01</div>
+          <h3 class="step-title">소셜 로그인</h3>
+          <p class="step-desc">
+            카카오 또는 네이버 계정으로 간편하게 가입합니다.
+            별도 회원가입이 필요 없습니다.
+          </p>
+        </li>
+        <li class="step-card">
+          <div class="step-num" aria-hidden="true">02</div>
+          <h3 class="step-title">부모님 정보 등록</h3>
+          <p class="step-desc">
+            성함, 전화번호, 생년월일, 식사 시간을 입력합니다.
+            식사 시간은 나중에 언제든 수정 가능합니다.
+          </p>
+        </li>
+        <li class="step-card">
+          <div class="step-num" aria-hidden="true">03</div>
+          <h3 class="step-title">약 등록</h3>
+          <p class="step-desc">
+            처방전을 카메라로 찍거나 약 이름을 검색해 등록합니다.
+            복용 시간은 횟수에 따라 자동으로 설정됩니다.
+          </p>
+        </li>
+        <li class="step-card">
+          <div class="step-num" aria-hidden="true">04</div>
+          <h3 class="step-title">알림 전화 시작</h3>
+          <p class="step-desc">
+            식사 30분 후 자동으로 복약 알림 전화가 발신됩니다.
+            수신하시면 홈 화면 카드가 자동으로 사라집니다.
+          </p>
+        </li>
+      </ol>
+
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════
+       TESTIMONIALS
+  ═══════════════════════════════════════════ -->
+  <section class="section testimonials" id="testimonials" aria-label="이용 후기">
+    <div class="container">
+
+      <div class="section-eyebrow">
+        <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true">
+          <path d="M8 1l1 6h6L9.5 10.5 11 16 8 12.5 5 16l1.5-5.5L1 7h6z" fill="#cc785c"/>
+        </svg>
+        <span style="font-size:13px;font-weight:500;color:var(--muted)">이용 후기</span>
+      </div>
+
+      <h2 class="section-title section-title--spacing-xxl">
+        가족들이<br/><em>이렇게 말했어요</em>
+      </h2>
+
+      <div class="testi-grid">
+
+        <article class="testi-card">
+          <div class="testi-stars" aria-label="별점 5점">★★★★★</div>
+          <blockquote class="testi-quote">
+            "멀리 살아서 걱정이 많았는데, 이제는 아버지가 약을 드셨는지
+            바로 알 수 있어 마음이 놓여요."
+          </blockquote>
+          <div class="testi-author">
+            <div class="testi-avatar" aria-hidden="true">👩</div>
+            <div>
+              <div class="testi-name">김지연 님</div>
+              <div class="testi-role">서울 거주 · 40대 딸</div>
+            </div>
+          </div>
+        </article>
+
+        <article class="testi-card testi-card--dark">
+          <div class="testi-stars testi-stars--amber" aria-label="별점 5점">★★★★★</div>
+          <blockquote class="testi-quote">
+            "처방전 사진 한 장으로 모든 게 등록되니까 정말 편해요.
+            노부모님 두 분 모두 관리하고 있어요."
+          </blockquote>
+          <div class="testi-author">
+            <div class="testi-avatar" aria-hidden="true">👨</div>
+            <div>
+              <div class="testi-name">박성민 님</div>
+              <div class="testi-role">부산 거주 · 50대 아들</div>
+            </div>
+          </div>
+        </article>
+
+        <article class="testi-card">
+          <div class="testi-stars" aria-label="별점 5점">★★★★★</div>
+          <blockquote class="testi-quote">
+            "약물 충돌 분석 기능 덕분에 위험한 복약 조합을 미리 알게 됐어요.
+            의사 선생님께도 공유했답니다."
+          </blockquote>
+          <div class="testi-author">
+            <div class="testi-avatar" aria-hidden="true">👩</div>
+            <div>
+              <div class="testi-name">이현주 님</div>
+              <div class="testi-role">대구 거주 · 간호사 딸</div>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════
+       CTA CORAL
+  ═══════════════════════════════════════════ -->
+  <section class="section cta-section" aria-label="시작하기">
+    <div class="cta-coral">
+      <h2 class="cta-coral-title">
+        부모님의 약 챙기기,<br/>온길과 함께 시작하세요
+      </h2>
+      <p class="cta-coral-sub">지금 바로 무료로 시작해보세요. 카드 등록 불필요 · 언제든 해지 가능</p>
+      <button class="btn-canvas">무료로 시작하기 →</button>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════
+       FOOTER
+  ═══════════════════════════════════════════ -->
+  <footer class="site-footer" aria-label="사이트 푸터">
+    <div class="container">
+
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="#" class="nav-wordmark" aria-label="온길 홈">
+            <svg class="spike-mark" viewBox="0 0 28 28" fill="none" aria-hidden="true">
+              <path d="M14 2 L15.4 12.6 L24 7 L16.8 14 L24 21 L15.4 15.4 L14 26 L12.6 15.4 L4 21 L11.2 14 L4 7 L12.6 12.6 Z" fill="#cc785c"/>
+            </svg>
+            온길
+          </a>
+          <p class="footer-tagline">
+            부모님 곁에 언제나 함께하는<br/>복약 동반자 서비스입니다.
+          </p>
+        </div>
+
+        <nav aria-label="서비스 링크">
+          <div class="footer-col-title">서비스</div>
+          <ul class="footer-links">
+            <li><a href="#features">주요 기능</a></li>
+            <li><a href="#how">이용 방법</a></li>
+            <li><a href="#" data-placeholder>앱 다운로드</a></li>
+          </ul>
+        </nav>
+
+        <nav aria-label="지원 링크">
+          <div class="footer-col-title">지원</div>
+          <ul class="footer-links">
+            <li><a href="#" data-placeholder>자주 묻는 질문</a></li>
+            <li><a href="#" data-placeholder>이용 가이드</a></li>
+            <li><a href="#" data-placeholder>고객 문의</a></li>
+          </ul>
+        </nav>
+
+        <nav aria-label="회사 링크">
+          <div class="footer-col-title">회사</div>
+          <ul class="footer-links">
+            <li><a href="#" data-placeholder>회사 소개</a></li>
+            <li><a href="#" data-placeholder>개인정보처리방침</a></li>
+            <li><a href="#" data-placeholder>이용약관</a></li>
+          </ul>
+        </nav>
+      </div>
+
+      <div class="footer-bottom">
+        <span>© 2025 온길. All rights reserved.</span>
+        <span>문의: hello@ongil.co.kr</span>
+      </div>
+
+    </div>
+  </footer>
+
+
+  <script>
+    (function () {
+      const hamburger = document.querySelector('.nav-hamburger');
+      const mobileNav = document.getElementById('mobile-nav');
+      if (!hamburger || !mobileNav) return;
+
+      function openMenu() {
+        mobileNav.classList.add('is-open');
+        hamburger.classList.add('is-open');
+        hamburger.setAttribute('aria-expanded', 'true');
+        hamburger.setAttribute('aria-label', '메뉴 닫기');
+        mobileNav.setAttribute('aria-hidden', 'false');
+      }
+
+      function closeMenu() {
+        mobileNav.classList.remove('is-open');
+        hamburger.classList.remove('is-open');
+        hamburger.setAttribute('aria-expanded', 'false');
+        hamburger.setAttribute('aria-label', '메뉴 열기');
+        mobileNav.setAttribute('aria-hidden', 'true');
+      }
+
+      hamburger.addEventListener('click', () => {
+        mobileNav.classList.contains('is-open') ? closeMenu() : openMenu();
+      });
+
+      mobileNav.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', closeMenu);
+      });
+    })();
+  </script>
+</body>
+</html>
